@@ -1,0 +1,4 @@
+# Ignore all swap files
+.*.swp
+.DS_Store
+node_modules
