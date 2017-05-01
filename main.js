@@ -1,11 +1,13 @@
 const electron  = require('electron')
 //const adBlocker = require('electron-ad-blocker')
 
-var path = require('path')
-  
-const url = "https://online-go.com"
+const url       = "https://online-go.com"
 
-var window = null
+var path        = require('path')
+
+var autoZenMode = false
+
+var window      = null
 
 // Wait until the app is ready
 electron.app.once('ready', function () {
@@ -27,7 +29,8 @@ electron.app.once('ready', function () {
   window.loadURL(url)
  
   window.webContents.on('did-navigate-in-page', function(event, url) {
-    if (url.match(/https:\/\/online-go\.com\/game\/.*/)) {
+
+    if (autoZenMode && url.match(/https:\/\/online-go\.com\/game\/.*/)) {
       window.webContents.executeJavaScript(`
       setTimeout(function() {
         $(".ogs-zen-mode").get(0).click()

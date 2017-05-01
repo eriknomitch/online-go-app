@@ -1,4 +1,4 @@
 #!/bin/zsh
 
 npm run package-mac
-open ./release-builds/Online Go-darwin-x64/Online Go.app
+open "./release-builds/Online Go-darwin-x64/Online Go.app"
