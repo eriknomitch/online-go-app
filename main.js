@@ -30,7 +30,9 @@ electron.app.once('ready', function () {
     if (url.match(/https:\/\/online-go\.com\/game\/.*/)) {
       window.webContents.executeJavaScript(`
       $(document).ready(function() {
-        $(".ogs-zen-mode").get(0).click()
+        setTimeout(function() {
+          $(".ogs-zen-mode").get(0).click()
+        }, 100);
       })
       `)
     }
