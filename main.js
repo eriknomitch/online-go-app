@@ -25,6 +25,16 @@ electron.app.once('ready', function () {
   //adBlocker(window)
 
   window.loadURL(url)
+ 
+  window.webContents.on('did-navigate-in-page', function(event, url) {
+    if (url.match(/https:\/\/online-go\.com\/game\/.*/)) {
+      window.webContents.executeJavaScript(`
+      $(document).ready(function() {
+        $(".ogs-zen-mode").get(0).click()
+      })
+      `)
+    }
+  })
 
   // Show window when page is ready
   window.once('ready-to-show', function () {
@@ -32,6 +42,7 @@ electron.app.once('ready', function () {
     window.show()
 
     let contents = window.webContents
+
 
     contents.insertCSS(`
 
@@ -59,6 +70,7 @@ electron.app.once('ready', function () {
 
     console.log(window.webContents) //.executeJavaScript("alert('Hello There!');");
   })
+    
 
 
 })
