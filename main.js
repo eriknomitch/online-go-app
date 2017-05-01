@@ -29,11 +29,9 @@ electron.app.once('ready', function () {
   window.webContents.on('did-navigate-in-page', function(event, url) {
     if (url.match(/https:\/\/online-go\.com\/game\/.*/)) {
       window.webContents.executeJavaScript(`
-      $(document).ready(function() {
-        setTimeout(function() {
-          $(".ogs-zen-mode").get(0).click()
-        }, 100);
-      })
+      setTimeout(function() {
+        $(".ogs-zen-mode").get(0).click()
+      }, 200);
       `)
     }
   })
