@@ -1,5 +1,5 @@
 var electron = require('electron') // http://electron.atom.io/docs/api
-const { blockWindowAds, adBlocker } = require('electron-ad-blocker'); 
+//const { blockWindowAds, adBlocker } = require('electron-ad-blocker'); 
 
 var path = require('path')
   
@@ -22,7 +22,7 @@ electron.app.once('ready', function () {
     }
   })
 
- blockWindowAds(window)
+ //blockWindowAds(window)
 
   window.loadURL(url)
 
