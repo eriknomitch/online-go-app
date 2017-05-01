@@ -22,7 +22,7 @@ electron.app.once('ready', function () {
     }
   })
 
- //blockWindowAds(window)
+  //blockWindowAds(window)
 
   window.loadURL(url)
 
@@ -35,8 +35,7 @@ electron.app.once('ready', function () {
 
     contents.insertCSS(`
 
-      .goban-container .Goban .Goban,
-body.dark .MainGobanView.zen {
+.goban-container .Goban .Goban, body.dark .MainGobanView.zen {
   background-color: #191919 !important;
 }
 .MainGobanView .play-controls .game-state {
@@ -50,7 +49,6 @@ body.dark .MainGobanView.zen {
 .Game.MainGobanView.zen .game-action-buttons {
   /*display: none;*/
 }
-
 .leave-zen-mode-button.ogs-zen-mode {
   opacity: 0;
 }
